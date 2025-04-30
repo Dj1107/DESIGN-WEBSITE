@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report an E-commerce Scam</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        textarea {
+            width: calc(100% - 12px);
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 0.25rem;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Report an E-commerce Scam</h1>
+        <form id="scamReportForm">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <div id="nameError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div id="emailError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Your Phone Number (optional):</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="orderId">Order ID (if applicable):</label>
+                <input type="text" id="orderId" name="orderId">
+            </div>
+
+            <div class="form-group">
+                <label for="websiteName">E-commerce Website Name:</label>
+                <input type="text" id="websiteName" name="websiteName" required>
+                <div id="websiteNameError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="productName">Product/Service Involved:</label>
+                <input type="text" id="productName" name="productName" required>
+                <div id="productNameError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="transactionDate">Date of Transaction:</label>
+                <input type="date" id="transactionDate" name="transactionDate">
+            </div>
+
+            <div class="form-group">
+                <label for="amountLost">Amount Lost (₹):</label>
+                <input type="number" id="amountLost" name="amountLost" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description of the Scam:</label>
+                <textarea id="description" name="description" rows="7" required></textarea>
+                <div id="descriptionError" class="error-message"></div>
+            </div>
+
+            <button type="submit">Submit Report</button>
+        </form>
+        <a href="home2.html" class="back-link">Back to Homepage</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('scamReportForm');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const websiteNameInput = document.getElementById('websiteName');
+            const productNameInput = document.getElementById('productName');
+            const descriptionInput = document.getElementById('description');
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const websiteNameError = document.getElementById('websiteNameError');
+            const productNameError = document.getElementById('productNameError');
+            const descriptionError = document.getElementById('descriptionError');
+
+            form.addEventListener('submit', function(event) {
+                let isValid = true;
+
+                if (nameInput.value.trim() === '') {
+                    nameError.textContent = 'Please enter your name.';
+                    isValid = false;
+                } else {
+                    nameError.textContent = '';
+                }
+
+                if (emailInput.value.trim() === '') {
+                    emailError.textContent = 'Please enter your email address.';
+                    isValid = false;
+                } else if (!isValidEmail(emailInput.value.trim())) {
+                    emailError.textContent = 'Please enter a valid email address.';
+                    isValid = false;
+                } else {
+                    emailError.textContent = '';
+                }
+
+                if (websiteNameInput.value.trim() === '') {
+                    websiteNameError.textContent = 'Please enter the website name.';
+                    isValid = false;
+                } else {
+                    websiteNameError.textContent = '';
+                }
+
+                if (productNameInput.value.trim() === '') {
+                    productNameError.textContent = 'Please enter the product/service involved.';
+                    isValid = false;
+                } else {
+                    productNameError.textContent = '';
+                }
+
+                if (descriptionInput.value.trim() === '') {
+                    descriptionError.textContent = 'Please provide a description of the scam.';
+                    isValid = false;
+                } else {
+                    descriptionError.textContent = '';
+                }
+
+                if (!isValid) {
+                    event.preventDefault(); // Prevent form submission if there are errors
+                } else {
+                    event.preventDefault(); // Prevent actual submission for this example
+                    console.log('Report submitted!');
+                    alert('Report submitted!');
+                    form.reset(); // Clear the form after submission
+                    // In a real scenario, you would send the form data to a server here.
+                }
+            });
+
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        });
+    </script>
+</body>
+
+</html>

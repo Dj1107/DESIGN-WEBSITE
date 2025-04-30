@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card-Not-Present Fraud - E-commerce Awareness</title>
+    <style>
+        /* Basic Styles - You might want to link to an external stylesheet for consistency */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2E7D32;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.75rem;
+        }
+        h2 {
+            color: #444;
+            margin-top: 2rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+        strong {
+            font-weight: bold;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Card-Not-Present (CNP) Fraud</h1>
+        <p>
+            <strong>Card-Not-Present (CNP) fraud</strong> occurs when a credit or debit card is used to make a purchase without the physical card being presented to the merchant. This type of fraud is common in online transactions, over-the-phone purchases, and mail orders.
+        </p>
+        <p>
+            Unlike traditional fraud where a thief physically steals a card, CNP fraud relies on obtaining card details through various means, such as data breaches, phishing scams, or malware.
+        </p>
+
+        <h2>How CNP Fraud Works</h2>
+        <p>
+            In e-commerce, CNP fraud typically involves these steps:
+        </p>
+        <ul>
+            <li>
+                <strong>Obtaining Card Data:</strong> Fraudsters acquire cardholder information, which may include the card number, expiration date, CVV (Card Verification Value), and sometimes the cardholder's billing address.
+            </li>
+            <li>
+                <strong>Unauthorized Transaction:</strong> The fraudster uses this stolen information to make unauthorized purchases on online stores. Because the merchant cannot physically verify the cardholder, it's easier for fraudulent transactions to go undetected.
+            </li>
+            <li>
+                <strong>Delivery or Resale:</strong> The purchased goods may be shipped to an address controlled by the fraudster or resold.
+            </li>
+        </ul>
+
+        <h2>Common Methods of Obtaining Card Data</h2>
+        <ul>
+            <li>
+                <strong>Data Breaches:</strong> Large-scale data breaches at companies that store cardholder information can expose the details of thousands or even millions of customers to criminals.
+            </li>
+            <li>
+                <strong>Phishing:</strong> As discussed <a href="phishing.html">here</a>, phishing scams can trick individuals into revealing their credit card information on fake websites.
+            </li>
+            <li>
+                <strong>Skimming:</strong> While primarily used in physical transactions, in some cases, malware on merchant websites can 'skim' card data entered by customers.
+            </li>
+            <li>
+                <strong>Social Engineering:</strong> Fraudsters may deceive individuals into providing their card details through social engineering tactics (e.g., posing as customer service representatives).
+            </li>
+            <li>
+                <strong>Malware:</strong> Malicious software installed on a user's computer or mobile device can capture card information entered during online transactions.
+            </li>
+        </ul>
+
+        <h2>Examples of CNP Fraud in E-commerce</h2>
+        <ul>
+            <li>
+                <strong>Unauthorized Purchases:</strong> The most common form, where a fraudster uses stolen card details to buy goods or services online.
+            </li>
+            <li>
+                <strong>Account Takeover:</strong> Fraudsters gain access to a customer's e-commerce account and make purchases using the stored payment information.
+            </li>
+            <li>
+                <strong>Triangulation Fraud (Related):</strong> While not strictly CNP, this fraud often involves CNP elements. A seller sets up a fake online store, collects orders and card details from customers, and then uses stolen card information to purchase the goods from a legitimate retailer, shipping them to the original customer. The fraudster disappears with the initial payments.
+            </li>
+        </ul>
+
+        <h2>How to Prevent CNP Fraud (for Consumers)</h2>
+        <ul>
+            <li>
+                <strong>Secure Your Devices:</strong> Keep your computer and mobile devices protected with up-to-date antivirus software.
+            </li>
+            <li>
+                <strong>Use Strong Passwords:</strong> Create strong, unique passwords for your online accounts.
+            </li>
+            <li>
+                <strong>Monitor Transactions:</strong> Regularly check your credit card statements and online account activity for any suspicious transactions.
+            </li>
+            <li>
+                <strong>Shop on Secure Sites:</strong> Only make purchases on websites that use HTTPS (look for the padlock icon in the address bar).
+            </li>
+            <li>
+                <strong>Be Wary of Phishing:</strong> Be cautious of unsolicited emails or messages asking for your credit card information.
+            </li>
+            <li>
+                <strong>Use Credit Cards Wisely:</strong> Credit cards generally offer better fraud protection than debit cards.
+            </li>
+            <li>
+                <strong>Consider Virtual Card Numbers:</strong> Some banks offer virtual card numbers for online shopping, which can limit the potential damage from fraud.
+            </li>
+            <li>
+                <strong>Enable Transaction Alerts:</strong> Set up alerts with your bank or credit card provider to notify you of any transactions.
+            </li>
+        </ul>
+
+        <h2>How to Prevent CNP Fraud (for Businesses)</h2>
+        <ul>
+            <li>
+                <strong>Address Verification System (AVS):</strong> Verify the cardholder's billing address.
+            </li>
+            <li>
+                <strong>Card Verification Value (CVV) Checks:</strong> Require customers to enter the CVV code.
+            </li>
+            <li>
+                <strong>Fraud Scoring Systems:</strong> Use systems that analyze transaction data to identify potentially fraudulent activity.
+            </li>
+            <li>
+                <strong>Multi-Factor Authentication (MFA):</strong> Implement MFA for customer accounts to add an extra layer of security.
+            </li>
+            <li>
+                <strong>3D Secure:</strong> Use 3D Secure authentication (e.g., Verified by Visa, Mastercard SecureCode) to add an extra step of verification for online transactions.
+            </li>
+            <li>
+                <strong>Transaction Monitoring:</strong> Monitor transactions for suspicious patterns, such as unusually large orders or multiple orders from the same IP address.
+            </li>
+        </ul>
+        <p>
+            By understanding the risks of Card-Not-Present fraud and taking appropriate precautions, both consumers and businesses can minimize their exposure to this type of online crime.
+        </p>
+    </div>
+</body>
+</html>
